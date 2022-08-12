@@ -1,0 +1,28 @@
+#app-editor {
+  display: flex;
+  flex-direction: column;
+}
+#app-editor .header-choose {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app-editor .ant-tabs-nav {
+  margin-bottom: 0;
+}
+#code-container {
+  flex-grow: 1;
+  height: calc(100vh - 46px);
+}
+#background-runner {
+  width: 50vw;
+  height: 100vh;
+}
+.run-container {
+  width: 50vw;
+  height: 100vh;
+}
+#app-runner {
+  width: 50vw;
+  padding: 16px;
+}
