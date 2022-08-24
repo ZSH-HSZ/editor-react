@@ -15,7 +15,7 @@ const App = (props) => {
     window.root = ReactDOM.createRoot(domContainer);
     const value = [
       `const { Button } = antd;`,
-      `const { CaretRightOutlined } = icons`,
+      `const { CaretRightOutlined } = icons;`,
       `const Index = () => {`,
       `  return <div>`,
       `    <Button type='primary' icon={<CaretRightOutlined />}>click</Button>`,
