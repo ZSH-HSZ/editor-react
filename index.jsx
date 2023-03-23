@@ -1,6 +1,6 @@
 const { useEffect, useState } = React;
 const { Tabs, Button } = antd;
-const { CaretRightOutlined } = icons;
+const { CaretRightOutlined, ClearOutlined } = icons;
 const { TabPane } = Tabs;
 var runIframe = null,
   runIframeHeight = 0,
@@ -37,9 +37,11 @@ const App = (props) => {
         state: null,
       },
     };
+    const jsCache = window.localStorage.getItem('jsCache')
+    const cssCache = window.localStorage.getItem('cssCache')
     require.config({ paths: { vs: "https://cdn.bootcdn.net/ajax/libs/monaco-editor/0.34.0/min/vs" } });
-    data.js.model = monaco.editor.createModel(value, "javascript");
-    data.css.model = monaco.editor.createModel("", "css");
+    data.js.model = monaco.editor.createModel(jsCache || value, "javascript");
+    data.css.model = monaco.editor.createModel(cssCache || "", "css");
     data.html.model = monaco.editor.createModel("", "html");
     setData(data);
     setEditor(
@@ -65,6 +67,7 @@ const App = (props) => {
   const run = () => {
     const load = function (js, html, css) {
       if (css) {
+        window.localStorage.setItem('cssCache', css)
         var style = document.createElement("style");
         // style.type = "text/css";
         style.innerHTML = css;
@@ -76,6 +79,7 @@ const App = (props) => {
         // document.body.innerHTML += html;
       }
       if (js) {
+        window.localStorage.setItem('jsCache', js)
         js = `${js}
         window.root.render(<Index />);`;
         try {
@@ -93,6 +97,11 @@ const App = (props) => {
     };
     load(getLang("js"), getLang("html"), getLang("css"));
   };
+  const clearCache = () => {
+    window.localStorage.removeItem('jsCache')
+    window.localStorage.removeItem('cssCache')
+
+  }
   return (
     <div className="header-choose">
       <Tabs
@@ -104,9 +113,14 @@ const App = (props) => {
         <TabPane tab="css" key="css"></TabPane>
         <TabPane tab="html" key="html"></TabPane>
       </Tabs>
-      <Button type="primary" icon={<CaretRightOutlined />} onClick={run}>
-        Run
-      </Button>
+      <div>
+        <Button icon={<ClearOutlined />} onClick={clearCache} style={{marginRight: 4}}>
+          clear
+        </Button>
+        <Button type="primary" icon={<CaretRightOutlined />} onClick={run}>
+          Run
+        </Button>
+      </div>
     </div>
   );
 };
