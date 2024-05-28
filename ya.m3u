@@ -1,0 +1,19 @@
+#EXTM3U
+#EXT-X-APP APTV
+#EXT-X-APTV-TYPE remote
+#EXT-X-SUB-URL https://miiror.ghproxy.com/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/ya.m3u
+
+#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1082/64/b3bb6f0caa54e70a0391bceab9e093_180_135.jpg?1482606779&475815" group-title="英雄联盟", 虎牙英雄联盟赛事
+http://148.135.93.213:81/live/huya/13579
+#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1097/09/2be017ac7938c7c1edf91daaba7670_180_135.jpg?1415905104&475815" group-title="英雄联盟", 芜湖神
+http://148.135.93.213:81/live/huya/353322
+#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1066/d4/f68beb916be20b990b58c0e35d1506_180_135.jpg?1472666588&475815" group-title="英雄联盟", 飞段
+http://148.135.93.213:81/live/huya/10918
+#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1072/bd/8c8dc2071fca5f917cc84372eed4cb_180_135.jpg?1585727771&475815" group-title="英雄联盟", 神超
+http://148.135.93.213:81/live/huya/102411
+#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1013/be/5b8bde4a7f4727361165d63acc9b81_180_135.jpg?1585910981&475815" group-title="英雄联盟", 蛇哥
+http://148.135.93.213:81/live/huya/5269
+#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1064/c5/97bb45ec4c15b516d70751566f5e19_180_135.jpg?1585926879&475815" group-title="英雄联盟", 红莲
+http://148.135.93.213:81/live/huya/229085
+#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1021/9c/cecd94728944f828258420eef7bbc5_180_135.jpg?0&475815" group-title="英雄联盟", 三杀
+http://148.135.93.213:81/live/huya/834333
