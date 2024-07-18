@@ -125,8 +125,15 @@ const App = (props) => {
   );
 };
 
-window.onload = () => {
+function addEditor() {
   const domContainer = document.querySelector("#app-editor");
+  if(!domContainer) {
+    setTimeout(() => {
+      addEditor()
+    }, 300);
+    return
+  }
   const root = ReactDOM.createRoot(domContainer);
   root.render(<App />);
-};
+}
+addEditor()
