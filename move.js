@@ -128,6 +128,7 @@ function changeReactInputValue(inputDom, newText) {
   inputDom.dispatchEvent(event)
 }
 const sleep = time => new Promise(resolve => setTimeout(resolve, time))
+// temp1和2 用了 chrome 的 save sa global
 const addToFavorite = async () => {
   changeReactInputValue(temp1, moveList[moveIndex])
   await sleep(100)
